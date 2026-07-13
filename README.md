@@ -164,7 +164,7 @@ Waveforms demonstrating successful APB transactions are available in the `waves/
 The following waveform demonstrates successful APB WRITE transactions followed by READ transactions to the same randomized address. The returned `PRDATA` matches the previously written `PWDATA`, confirming correct APB slave functionality and successful scoreboard verification.The waveform demonstrates APB SETUP and ACCESS phases, protocol handshaking, successful memory update during WRITE operations, and correct data retrieval during subsequent READ operations.
 
 <p align="center">
-  <img src="waves/apb_read_write_verification.png" width="900" alt="APB Read and Write Verification">
+  <img src="waves/apb_read_write_verification.jpg" width="900" alt="APB Read and Write Verification">
 </p>
 
 ---
