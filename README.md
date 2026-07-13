@@ -48,7 +48,7 @@ The APB protocol transfers data using two phases:
 ## UVM Testbench Architecture
 
 <p align="center">
-  <img src="images/uvm_architecture.png" width="900">alt="UVM Testbench Architecture">
+  <img src="images/uvm_architecture.png" width="900" alt="UVM Testbench Architecture">
 </p>
 
 ---
