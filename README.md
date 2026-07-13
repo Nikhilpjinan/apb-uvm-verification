@@ -47,7 +47,9 @@ The APB protocol transfers data using two phases:
 
 ## UVM Testbench Architecture
 
-> *(Architecture diagram will be inserted here.)*
+<p align="center">
+  <img src="images/uvm_architecture.png" width="900">alt="UVM Testbench Architecture">
+</p>
 
 ---
 
@@ -82,7 +84,8 @@ APB-UVM-Verification
 │   ├── apb_scoreboard.sv
 │   ├── apb_subscriber.sv
 │   ├── apb_env.sv
-│   └── apb_test.sv
+│   ├── apb_test.sv
+│   └── top.sv 
 │
 ├── docs
 ├── images
@@ -142,37 +145,27 @@ Future enhancements:
 
 ---
 
-## Simulation Flow
+## Simulation Results
 
-Sequence
+The verification environment successfully executed randomized APB read and write transactions.
 
-↓
+The scoreboard verified data integrity by comparing DUT responses against the reference memory model.
 
-Sequencer
+Protocol compliance was monitored throughout simulation.
 
-↓
+Waveforms demonstrating successful APB transactions are available in the `waves/` directory.
 
-Driver
+---
 
-↓
+## Simulation Waveforms
 
-APB Interface
+### APB Read and Write Transaction
 
-↓
+The following waveform demonstrates successful APB WRITE transactions followed by READ transactions to the same randomized address. The returned `PRDATA` matches the previously written `PWDATA`, confirming correct APB slave functionality and successful scoreboard verification.The waveform demonstrates APB SETUP and ACCESS phases, protocol handshaking, successful memory update during WRITE operations, and correct data retrieval during subsequent READ operations.
 
-APB Slave (DUT)
-
-↓
-
-Monitor
-
-↓
-
-Scoreboard
-
-↓
-
-Subscriber
+<p align="center">
+  <img src="waves/apb_read_write_verification.png" width="900" alt="APB Read and Write Verification">
+</p>
 
 ---
 
@@ -189,16 +182,39 @@ Subscriber
 
 ## Technologies Used
 
+| Category | Technology |
+|----------|------------|
+| HDL | SystemVerilog |
+| Verification Methodology | UVM 1.2 |
+| Bus Protocol | AMBA APB |
+| Verification Techniques | Constrained Random Verification |
+| Functional Checking | Scoreboard |
+| Coverage | Functional Coverage |
+
+---
+
+## Skills Demonstrated
+
 - SystemVerilog
-- Universal Verification Methodology (UVM 1.2)
+- Universal Verification Methodology (UVM)
 - AMBA APB Protocol
+- Constrained Random Verification
+- Functional Coverage
+- Scoreboard-based Verification
+- Analysis Ports
+- Virtual Interfaces
+- UVM Factory
+- UVM Configuration Database
+- Transaction-Level Modeling (TLM)
 
 ---
 
 ## Author
 
-**Nikhil Jinan**
+**Nikhil P Jinan**
 
 Electronics and Communication Engineering Graduate
 
 Aspiring Design Verification Engineer
+
+---
